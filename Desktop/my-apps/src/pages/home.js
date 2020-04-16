@@ -29,7 +29,7 @@ this.setState({
               <Grid item sm={4} xs ={12}>
              <p>Profile..</p>
               </Grid>
-          </Grid>
+    g      </Grid>
         )
     }
 }

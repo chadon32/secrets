@@ -43,6 +43,7 @@ progress:{
 
 
 
+
 export class login extends Component {
     constructor(){
         super();
@@ -72,6 +73,7 @@ this.setState({
        axios.post('/login',userData)
        .then(res => {
            console.log(res.data)
+           localStorage.setItem('FBIdtoken', `Bearer ${res.data.token}`)
            this.setState({
                loading: false
            })
@@ -115,7 +117,7 @@ this.setState({
                     {loading && (<CircularProgress  size = {30} className = {classes.progress} />)}
                     </Button>
                     <br/>
-                    <small>dont have an account ? signup <Link to ='signup'>here </Link></small>
+                    <small>dont have an account ? signup <Link to ='/signup'>here </Link></small>
                     </form>
                 </Grid>
                 <Grid item sm/>
